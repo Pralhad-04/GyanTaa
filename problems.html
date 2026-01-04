@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GyanTaa | Student Problems We Solve</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===============================
+       Page Specific Styles
+       =============================== */
+
+    body {
+      background-color: #0f1116;
+      color: #e5e7eb;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #6366f1;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #181e29;
+      border-radius: 15px;
+      padding: 25px 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #6366f1;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #6366f1;
+    }
+
+    .card-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #6366f1;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card-btn:hover {
+      background-color: #4f46e5;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      section h2 {
+        font-size: 2rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+       <img src="images/GyanTaa.png" alt="GyanTaa Logo">
+      Gyan<span>Taa</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problems.html">Problems</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="projects.html">Projects</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <button class="btn-login">Login</button>
+  </header>
+
+  <section>
+    <h2>🤔 Student Problems We Solve</h2><br>
+    <div class="grid">
+
+      <div class="card">
+        <h3>🎓 Pass-out but Lost?</h3>
+        <p>Many students pass out but don’t know the next step.</p>
+        <ul>
+          <li>Job vs Higher Studies</li>
+          <li>Competitive exams guidance</li>
+          <li>Skill-based career paths</li>
+        </ul>
+        <button class="card-btn" onclick="openPage('pass-out')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>🧭 Stream-based Roadmap</h3>
+        <p>Clear guidance after choosing a stream.</p>
+        <ul>
+          <li>Engineering / Arts / Commerce</li>
+          <li>Career options explained simply</li>
+          <li>Future-ready skills</li>
+        </ul>
+        <button class="card-btn" onclick="openPage('roadmap')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3> ✏️ Skills To Learn</h3>
+        <p>Students don’t know what exactly they need for their goal.</p>
+        <ul>
+          <li>AI-based resume structure</li>
+          <li>What to write if you have no experience</li>
+          <li>Project & skill suggestions</li>
+        </ul>
+        <button class="card-btn" onclick="openPage('skills')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>📚 Study Notes</h3>
+        <p>Stream-wise notes & exam preparation material.</p>
+        <ul>
+          <li>Engineering</li>
+          <li>Arts & Commerce</li>
+          <li>Competitive Exams</li>
+        </ul>
+        <button class="card-btn" onclick="openPage('note')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>💻 Projects</h3>
+        <p>Beginner to advanced project ideas.</p>
+        <ul>
+          <li>Mini Projects</li>
+          <li>Final Year Projects</li>
+          <li>Resume Worthy</li>
+        </ul>
+        <button class="card-btn" onclick="openPage('projects')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>📄 Resume Confusion</h3>
+        <p>Students don’t know how a resume should look or what to write.</p>
+        <ul>
+          <li>AI-based resume structure</li>
+          <li>What to write if you have no experience</li>
+          <li>Project & skill suggestions</li>
+        </ul>
+        <button class="card-btn" onclick="showAlert('🚧 Under Development Login feature is currently under development and will be released soon.')">Open</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Simple JS function to handle page opens
+    function openPage(page) {
+      alert('This will open the ' + page + ' page.');
+      // Replace alert with actual navigation in future:
+      // window.location.href = page + '.html';
+    }
+  </script>
+ <script src="script.js"></script>
+ 
+     <footer>
+    <p>© 2025 GyanTaa | Made with ❤️ in India</p>
+  </footer>
+
+  
+
+</body>
+</html>

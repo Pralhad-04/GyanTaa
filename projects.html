@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GyanTaa | Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Same global styles and navbar */
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+       <img src="images/GyanTaa.png" alt="GyanTaa Logo">
+      Gyan<span>Taa</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problems.html">Problems</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="projects.html">Projects</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <button class="btn-login">Login</button>
+  </header>
+
+  <!-- Projects Section -->
+  <section>
+    <h2>💻 Projects</h2><br>
+    <div class="grid">
+      <div class="card">
+        <h3> 🧑🏻‍🔧 Mini Projects</h3>
+        <p>Short, beginner-friendly projects to learn concepts quickly.</p>
+        <ul>
+          <li>Web Apps</li>
+          <li>Python Scripts</li>
+          <li>Portfolio Ready</li>
+        </ul>
+        <button class="card-btn" onclick="showAlert('🚧 Under Development Login feature is currently under development and will be released soon.')">Open</button>
+      </div>
+
+      <div class="card">
+        <h3> 🧑🏻‍🎓 Final Year Projects</h3>
+        <p>Advanced projects suitable for final year submission.</p>
+        <ul>
+          <li>Web & Mobile Apps</li>
+          <li>AI & ML Projects</li>
+          <li>Industry Ready</li>
+        </ul>
+        <button class="card-btn" onclick="showAlert('🚧 Under Development Login feature is currently under development and will be released soon.')">Open</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function openPage(page) {
+      alert('This will open the ' + page + ' project page.');
+    }
+  </script>
+<script src="script.js"></script>
+    <footer>
+    <p>© 2025 GyanTaa | Made with ❤️ in India</p>
+  </footer>
+</body>
+</html>

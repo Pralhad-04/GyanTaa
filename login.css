@@ -1,0 +1,325 @@
+/* ===============================
+EduSathi – Resources Page CSS
+Theme: Matte Black & Grey
+=============================== */
+
+/* ===== Root ===== */
+:root {
+  --bg-main: #0b0f14;
+  --bg-secondary: #141922;
+  --bg-card: #1a1f2c;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-secondary);
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.logo span {
+  color: var(--text-main);
+}
+
+.navbar nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+.btn-login {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 9px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-login:hover {
+  background: var(--accent-dark);
+}
+
+/* ===== Section ===== */
+.section {
+  max-width: 1200px;
+  margin: 90px auto 60px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 380px;
+  height: 3px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* ===== Cards Layout ===== */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* ===== Card ===== */
+.card {
+  background: linear-gradient(145deg, #141925, #10141c);
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04),
+              0 15px 40px rgba(0,0,0,0.6);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06),
+              0 30px 70px rgba(0,0,0,0.85);
+}
+
+/* ===== Card Logo ===== */
+.card-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.card-logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* ===== Card Content ===== */
+.card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  color: #6d72ff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 18px;
+}
+
+/* ===== Buttons ===== */
+.card-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(99,102,241,0.35);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(99,102,241,0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ===== Credit ===== */
+.card-credit {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.card-credit a {
+  color: #6d72ff;
+  text-decoration: none;
+}
+
+.card-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+
+  .navbar nav {
+    margin: 10px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border-top: 1px solid #222;
+}
+/* ===== Custom Alert Popup ===== */
+.alert-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.alert-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.alert-box {
+  background: var(--bg-card);
+  padding: 30px 28px;
+  border-radius: 14px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  animation: pop 0.35s ease;
+}
+
+.alert-box h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.alert-box p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.alert-box button {
+  padding: 8px 26px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.alert-box button:hover {
+  background: var(--accent-dark);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.logo img {
+  height: 10px;          /* control size */
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 34px;
+  }
+}
+
+/* ===== Logo styling ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  text-decoration: none;
+}
+
+/* Logo image */
+.logo img {
+  height: 70px;   /* logo size */
+  width: auto;
+}
+
+
+/* "Taa" in white */
+.logo span .taa {
+  color: #ffffff;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> GyanTaa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+       <img src="images/GyanTaa.png" alt="GyanTaa Logo">
+      Gyan<span>Taa</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problems.html">Problems</a>
+      <a href="skills.html">Tutorials</a>
+      <a href="projects.html">Projects</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <button class="btn-login">Login</button>
+  </header>
+
+  <section>
+    <h2>Skills To Learn 🚀</h2>
+
+    <!-- Video Modal / Section -->
+    <section id="videoSection" class="video-section" style="display:none;">
+      <h2 id="videoTitle"></h2>
+      <div class="video-wrapper">
+        <iframe
+          id="videoFrame"
+          width="100%"
+          height="420"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="credit">🎥 Credit: [Creator Name]</p>
+    </section>
+
+    <!-- Grid of Cards -->
+    <div class="grid">
+
+      <div class="card">
+        <h3>🐍 Ultimate Python Course</h3>
+        <p>Master Python programming from basics to advanced.</p>
+        <p class="credit">🎥 Credit: Code With Harry</p>
+        <button class="card-btn" onclick="openYouTube('UrsmFxEIp5k')">
+          🎥 Watch on YouTube
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>🗄 MongoDB In 1 Hour</h3>
+        <p>Learn MongoDB basics and database operations fast.</p>
+        <p class="credit">🎥 Credit: Code With Harry</p>
+        <button class="card-btn" onclick="openYouTube('M1dKYQ7GsTg')">
+          🎥 Watch on YouTube
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>🛢 SQL</h3>
+        <p>Master database querying and management with SQL.</p>
+        <p class="credit">🎥 Credit: Code With Harry</p>
+        <button class="card-btn" onclick="openYouTube('yE6tIle64tU')">
+          🎥 Watch on YouTube
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>🔵 C Language</h3>
+        <p>Learn the fundamentals of C programming.</p>
+        <p class="credit">🎥 Credit: Code With Harry</p>
+        <button class="card-btn" onclick="openYouTube('aZb0iu4uGwA')">
+          🎥 Watch on YouTube
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>🌐 HTML</h3>
+        <p>Build web pages and structure content with HTML.</p>
+        <p class="credit">🎥 Credit: Code With Harry</p>
+        <button class="card-btn" onclick="openYouTube('k2DSi1zGEc8')">
+          🎥 Watch on YouTube
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <footer>
+    <p>© 2025 GyanTaa | Made with ❤️ in India</p>
+  </footer>
+
+</body>
+</html>
