@@ -39,8 +39,6 @@ Many students face questions like:
 
 
 
-> ⚠️ **Note:** Some files may not open on GitHub because their size is too large. GitHub has a file size limit and does not support very large files.
-> To use all features properly, you may need to download large files from cloud storage links provided in the project.
 
 ---
 
