@@ -192,7 +192,7 @@
           <li>What to write if you have no experience</li>
           <li>Project & skill suggestions</li>
         </ul>
-        <button class="card-btn" onclick="openPage('https://bettercv.com/resume/choose-template')">Open</button>
+        <button class="card-btn" onclick="openLink('https://bettercv.com/resume/choose-template')">Open</button>
       </div>
 
     </div>
@@ -205,6 +205,9 @@
       // Replace alert with actual navigation in future:
       // window.location.href = page + '.html';
     }
+    function openLink(url) {
+    window.open(url, "_blank");
+  }
   </script>
  <script src="script.js"></script>
  
@@ -216,4 +219,5 @@
 
 </body>
 </html>
+
 
