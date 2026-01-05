@@ -2,20 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GyanTaa | Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    /* Same global styles and navbar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .logo img {
+      width: 38px;
+      height: 38px;
+    }
+
+    .logo span {
+      color: #b266ff;
+    }
+
+    nav a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .btn-login {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #7f00ff, #e100ff);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== PAGE TITLE ===== */
+    h1 {
+      text-align: center;
+      margin: 35px 0 10px;
+      color: #d9b3ff;
+    }
+
+    /* ===== STREAM CARDS ===== */
+    .streams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 30px 40px;
+    }
+
+    .stream-card {
+      background: #141414;
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(138,43,226,0.4);
+    }
+
+    .stream-card h2 {
+      color: #b266ff;
+      margin-bottom: 8px;
+    }
+
+    .stream-card p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .stream-card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #7f00ff, #e100ff);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== PROJECT DISPLAY ===== */
+    .project-display {
+      padding: 20px 40px 50px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .project {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .project a {
+      color: #8ab4ff;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .project span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="logo">
-       <img src="images/GyanTaa.png" alt="GyanTaa Logo">
-      Gyan<span>Taa</span></div>
+      <img src="images/GyanTaa.png" alt="GyanTaa Logo">
+      Gyan<span>Taa</span>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="problems.html">Problems</a>
@@ -26,42 +162,69 @@
     <button class="btn-login">Login</button>
   </header>
 
-  <!-- Projects Section -->
-  <section>
-    <h2>💻 Projects</h2><br>
-    <div class="grid">
-      <div class="card">
-        <h3> 🧑🏻‍🔧 Mini Projects</h3>
-        <p>Short, beginner-friendly projects to learn concepts quickly.</p>
-        <ul>
-          <li>Web Apps</li>
-          <li>Python Scripts</li>
-          <li>Portfolio Ready</li>
-        </ul>
-        <button class="card-btn" onclick="showAlert('🚧 Under Development Login feature is currently under development and will be released soon.')">Open</button>
-      </div>
+  <h1>🚀 Project Streams</h1>
 
-      <div class="card">
-        <h3> 🧑🏻‍🎓 Final Year Projects</h3>
-        <p>Advanced projects suitable for final year submission.</p>
-        <ul>
-          <li>Web & Mobile Apps</li>
-          <li>AI & ML Projects</li>
-          <li>Industry Ready</li>
-        </ul>
-        <button class="card-btn" onclick="showAlert('🚧 Under Development Login feature is currently under development and will be released soon.')">Open</button>
-      </div>
+  <!-- ===== STREAMS ===== -->
+  <section class="streams">
+
+    <div class="stream-card">
+      <h2>💻 Computer Science</h2>
+      <p>CS projects for 1st, 2nd & 3rd year students</p>
+      <button onclick="openProjects('cs')">View Projects</button>
     </div>
+
+    <div class="stream-card">
+      <h2>🤖 AI & Machine Learning</h2>
+      <p>AI, ML & Deep Learning projects</p>
+      <button onclick="openProjects('aiml')">View Projects</button>
+    </div>
+
+    <div class="stream-card">
+      <h2>📊 Data Science</h2>
+      <p>Data analysis & prediction projects</p>
+      <button onclick="openProjects('ds')">View Projects</button>
+    </div>
+
   </section>
 
+  <!-- ===== PROJECT LIST ===== -->
+  <section id="projectDisplay" class="project-display"></section>
+
   <script>
-    function openPage(page) {
-      alert('This will open the ' + page + ' project page.');
+    const projects = {
+      cs: [
+        { name: "Student Management System", link: "https://github.com/topics/student-management-system", credit: "Open Source Contributors" },
+        { name: "Library Management System", link: "https://github.com/topics/library-management-system", credit: "GitHub Community" },
+        { name: "Online Examination System", link: "https://github.com/topics/online-examination-system", credit: "CS Developers" }
+      ],
+      aiml: [
+        { name: "Spam Email Detection", link: "https://github.com/topics/spam-detection-ml", credit: "ML Open Source Devs" },
+        { name: "Face Detection System", link: "https://github.com/topics/face-detection", credit: "Computer Vision Community" },
+        { name: "AI Chatbot", link: "https://github.com/topics/ai-chatbot", credit: "AI Developers" }
+      ],
+      ds: [
+        { name: "IPL Data Analysis", link: "https://github.com/topics/ipl-data-analysis", credit: "Data Science Enthusiasts" },
+        { name: "House Price Prediction", link: "https://github.com/topics/house-price-prediction", credit: "Kaggle & GitHub Devs" },
+        { name: "Customer Churn Analysis", link: "https://github.com/topics/customer-churn", credit: "Analytics Community" }
+      ]
+    };
+
+    function openProjects(stream) {
+      const display = document.getElementById("projectDisplay");
+      display.innerHTML = "";
+
+      projects[stream].forEach(p => {
+        display.innerHTML += `
+          <div class="project">
+            <a href="${p.link}" target="_blank">${p.name}</a>
+            <span>Credit: ${p.credit}</span>
+          </div>
+        `;
+      });
+
+      display.scrollIntoView({ behavior: "smooth" });
     }
   </script>
-<script src="script.js"></script>
-    <footer>
-    <p>© 2025 GyanTaa | Made with ❤️ in India</p>
-  </footer>
+
 </body>
 </html>
